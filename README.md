@@ -1,2 +1,4 @@
-# ts-template
-Typescript package template
+# dbdrive
+
+Simple file abstraction over database
+

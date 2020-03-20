@@ -30,6 +30,10 @@ export class Directory {
     file(name: string): File {
         return null;
     }
+
+    all(): File[] | PromiseLike<File[]> {
+        return [];
+    }
 }
 
 export class File {

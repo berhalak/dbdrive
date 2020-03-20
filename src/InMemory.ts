@@ -37,6 +37,12 @@ class MemDir implements Directory {
 
     }
 
+    async all(): Promise<File[]> {
+        const all = [...this.db.db.entries()];
+        const paths = all.filter(x => x[0].startsWith(this.path()) && !x[0].replace(this.path() + "/", "").includes("/")).map(x => x[0]);
+        return paths.map(x => this.db.file(x));
+    }
+
     path(): string {
         return `${this.parent}/${this.name}`
     }

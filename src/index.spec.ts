@@ -22,6 +22,10 @@ test('in memory test', async () => {
 
 	expect(await john.exists()).toBe(true);
 
+	const all = await users.all();
+
+	expect(all).toHaveLength(1);
+
 	await john.delete();
 
 	expect(await john.exists()).toBe(false);

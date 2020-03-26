@@ -16,6 +16,8 @@ export class Drive {
         const split = path.split("/");
         return split[split.length - 1];
     }
+
+    static Memory: () => Drive = null;
 }
 
 export class Directory {

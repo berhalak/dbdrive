@@ -26,6 +26,13 @@ export class InMemoryDrive implements Drive {
     file(path: string): File {
         return MemFile.fromAbsolute(path, this);
     }
+
+    /**
+     *
+     */
+    constructor() {
+        console.warn("In memory drive is being used");
+    }
 }
 
 class MemDir implements Directory {
